@@ -1,21 +1,19 @@
 ---
-
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: production
+  name: local-k8s
   namespace: argocd
   finalizers:
     - resources-finalizer.argocd.argoproj.io
 spec:
-  project: production
+  project: local-k8s
   source:
     repoURL: https://github.com/jasondewitt/local-k8s.git
     targetRevision: HEAD
-    path: production
+    path: local-k8s
   destination:
     server: https://kubernetes.default.svc
-    namespace: production
   syncPolicy:
     automated:
       selfHeal: true
