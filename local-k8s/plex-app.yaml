@@ -6,7 +6,7 @@ metadata:
 spec:
   project: local-k8s
   source:
-    repoURL: https://github.com/jason.dewitt/local-k8s.git
+    repoURL: https://github.com/jasondewitt/local-k8s.git
     targetRevision: HEAD
     path: plex
   destination:
