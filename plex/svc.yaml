@@ -54,7 +54,7 @@ spec:
     - name: pms
       port: 32400
       protocol: TCP
-      targetPort: pms
+      targetPort: plex
     - name: home-theatre
       port: 3005
       protocol: TCP
