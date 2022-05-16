@@ -1,16 +1,16 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: plex-dashboard
-  namespace: plex
+  name: argo
+  namespace: argocd
 spec:
   entryPoints:
     - web
     - websecure
   routes:
-  - match: Host(`plex.internal`)
+  - match: Host(`argo.internal`)
     kind: Rule
     services:
-    - name: plex-tcp
-      namespace: plex
-      port: 32400
+    - name: argocd-server
+      namespace: argocd
+      port: 80
