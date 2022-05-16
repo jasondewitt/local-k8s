@@ -11,8 +11,16 @@ spec:
     targetRevision: v10.19.5
     helm:
       releaseName: traefik
-      valueFiles:
-      - traefik-values.yaml
+      values: |
+        service:
+          enabled: true
+          type: LoadBalancer
+          spec:
+            loadBalancerIP: 10.0.0.225
+
+        logs:
+          access:
+            enabled: true
   destination:
     server: "https://kubernetes.default.svc"
     namespace: traefik
