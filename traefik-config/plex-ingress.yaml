@@ -1,18 +1,16 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
 metadata:
-  name: plex
-  namespace: traefik
-
+  name: traefik-dashboard
 spec:
-  rules:
-    - host: plex.internal
-      http:
-        paths:
-          - path: /
-            pathType: Exact
-            backend:
-              service:
-                name:  plex
-                port:
-                  number: 32400
+  routes:
+  - match: Host(`plex.internal`)
+    kind: Rule
+    services:
+    - name: plex
+      kind: service
+      namespace: traefik
+      port: 32400
+
+
+
