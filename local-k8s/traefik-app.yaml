@@ -12,6 +12,8 @@ spec:
     helm:
       releaseName: traefik
       values: |
+        api:
+          dashboard: true
         service:
           enabled: true
           type: LoadBalancer
