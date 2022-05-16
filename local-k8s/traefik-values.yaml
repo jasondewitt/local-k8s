@@ -1,0 +1,9 @@
+service:
+  enabled: true
+  type: LoadBalancer
+  spec:
+    loadBalancerIP: 10.0.0.225
+
+logs:
+  access:
+    enabled: true
