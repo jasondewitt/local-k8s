@@ -12,4 +12,5 @@ spec:
     kind: Rule
     services:
     - name: plex
-      port: plex
+      namespace: plex
+      port: 32400
