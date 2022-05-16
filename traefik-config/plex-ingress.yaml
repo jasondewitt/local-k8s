@@ -1,14 +1,15 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: traefik-dashboard
+  name: plex-dashboard
+  namespace: traefik
 spec:
   routes:
   - match: Host(`plex.internal`)
     kind: Rule
     services:
     - name: plex
-      kind: service
+      kind: TraefikService
       namespace: traefik
       port: 32400
 
