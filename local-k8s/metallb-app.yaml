@@ -4,18 +4,14 @@ metadata:
   name: metallb
   namespace: argocd
 spec:
-  project: default
+  project: local-k8s
   source:
-    chart: metallb
-    repoURL: https://metallb.github.io/metallb
-    targetRevision: v0.12.1
-    helm:
-      releaseName: metallb
-      valueFiles:
-      - ../metallb/values.yaml
+    repoURL: https://github.com/jasondewitt/local-k8s.git
+    targetRevision: HEAD
+    path: plex
   destination:
     server: "https://kubernetes.default.svc"
-    namespace: metallb
+    namespace: metallb-system
   syncPolicy:
     syncOptions:
     - CreateNamespace=true
