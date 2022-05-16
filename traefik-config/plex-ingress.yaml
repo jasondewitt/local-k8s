@@ -4,13 +4,15 @@ metadata:
   name: plex-dashboard
   namespace: traefik
 spec:
+  entrypoints:
+  - web
   routes:
   - match: Host(`plex.internal`)
     kind: Rule
     services:
     - name: plex
-      kind: TraefikService
-      namespace: traefik
+      kind: Service
+      namespace: plex
       port: 32400
 
 
