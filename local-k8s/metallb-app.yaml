@@ -8,7 +8,7 @@ spec:
   source:
     repoURL: https://github.com/jasondewitt/local-k8s.git
     targetRevision: HEAD
-    path: plex
+    path: metallb
   destination:
     server: "https://kubernetes.default.svc"
     namespace: metallb-system
