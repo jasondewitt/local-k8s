@@ -6,9 +6,9 @@ metadata:
 spec:
   project: local-k8s
   source:
-    chart: loki-distributed
+    chart: loki
     repoURL: https://grafana.github.io/helm-charts
-    targetRevision: v0.48.3 
+    targetRevision: v2.11.1 
     helm:
       releaseName: loki
   destination:
